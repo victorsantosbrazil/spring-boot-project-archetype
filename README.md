@@ -15,15 +15,18 @@ projects, making it an ideal starting point for new development efforts.
 
 ##  📔 Table of Contents
 <!--ts-->
-   * [Pre-requirements](#✂️-pre-requirements)
-   * [How to use](#🎮-how-to-use)
+   * [Pre-requirements](#-pre-requirements)
+   * [How to use](#-how-to-use)
       * [Setup](#setup)
       * [Run](#run)
-   * [Tools](#🔨-tools)
+        * [Local](#local)
+        * [Container](#container)
+   * [Environment Variables](#-environment-variables)
+   * [Tools](#-tools)
 <!--te-->
 
 ## ✂️ Pre-requirements
-* [JDK 22](https://www.oracle.com/br/java/technologies/downloads/)
+* [JDK 17](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
 
 ## 🎮 How to use
 
@@ -45,9 +48,37 @@ Install
 ```
 
 ### Run
+#### Local
 ```
 ./mvnw spring-boot:run
 ```
+
+#### Container
+
+Before running the application, you need to create a docker image, do this by running the following command:
+```
+docker build -t spring-boot-project-archetype .
+```
+
+To run:
+```
+docker run spring-boot-project-archetype
+```
+#### 
+
+## 🌍 Environment variables
+This application uses the following environment variables for configuration. You can set these variables when running 
+the application locally or in a container.
+
+### Database Configuration
+
+| Variable Name | Description              | Default Value |
+|---------------|--------------------------|---------------|
+| `DB_HOST`     | Database server hostname | localhost     |
+| `DB_PORT`     | Database server port     | 5432          |
+| `DB_SCHEMA`   | Database schema          | db            |
+| `DB_USERNAME` | Database username        | dbuser        |
+| `DB_PASSWORD` | Database password        | dbpass        |
 
 ## 🔨 Tools
 
